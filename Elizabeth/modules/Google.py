@@ -41,7 +41,7 @@ async def _(event):
         return
     if event.is_group:
      if not (await is_register_admin(event.input_chat, event.message.sender_id)):
-       await event.reply("😜 Hai.. You are not admin..🤭 You can't use this command.. But you can use in my pm🙈")
+       await event.reply("Hehe!...🤭 You are not an admin. You can't use this command.. But you can use in my PM. ")
        return
     # SHOW_DESCRIPTION = False
     input_str = event.pattern_match.group(1) # + " -inurl:(htm|html|php|pls|txt) intitle:index.of \"last modified\" (mkv|mp4|avi|epub|pdf|mp3)"
@@ -59,11 +59,11 @@ async def _(event):
 
 
 __help__ = """
- ➩ /google <text input> Gets google search result
+ ➩ /google <text input> Get Google search result
 
- ➩ /img <object> Gets google image results
+ ➩ /img <object> Get Google images result
 
- ➩ /reverse : Reverse searches image or stickers on google.
+ ➩ /reverse : Reverse searches image or stickers on Google.
 """
 
-__mod_name__ = "🌍 GOOGLE"
+__mod_name__ = "🔍 Google"
