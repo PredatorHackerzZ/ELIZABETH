@@ -1,7 +1,7 @@
 __help__ = """
- ➩ /imdb <movie name> Get imdb result from imbd.com
+ ➩ /imdb <movie name> Get IMDB result from imbd.com
 
- ➩ /app <app name> Search application from play store
+ ➩ /app <app name> Search apks from play store
 
  ➩ /phone <full number> Check Details 
 
@@ -9,13 +9,13 @@ __help__ = """
 
  ➩ /video <video name> or <YouTube link> Get that video from YouTube.
 
- ➩ /weather <city>: Gets weather information of particular place!
+ ➩ /weather <city>: Gets weather information of particular place! Or Area. 
 
- ➩ /datetime <country code> Get date and time by provided country 
+ ➩ /datetime <country code> Get date and time by provided country. 
 
  ➩ /zip: Reply to a telegram file to compressing in .zip format
 
  ➩ /unzip: Reply to a telegram file to decompress it from the .zip format
 """
 
-__mod_name__ = "📇 TOOLS"
+__mod_name__ = "Tools 🛠"
