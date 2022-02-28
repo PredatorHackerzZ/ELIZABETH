@@ -34,14 +34,14 @@ def mute(update, context):
 
     if user_can_ban(chat, user, context.bot.id) == False:
         message.reply_text(
-            "You don't have enough rights to restrict someone from talking!"
+            "You don't have access to this Command for Muting"
         )
         return ""
 
     user_id = extract_user(message, args)
     if not user_id:
         message.reply_text(
-            "You'll need to either give me a username to mute, or reply to someone to be muted."
+            "You'll need to either give me a username or userid to mute, or reply to someone to be muted."
         )
         return ""
 
@@ -60,7 +60,7 @@ def mute(update, context):
             context.bot.restrict_chat_member(
                 chat.id, user_id, permissions=ChatPermissions(
                     can_send_messages=False))
-            message.reply_text("👍🏻 muted! 🤐")
+            message.reply_text("Muted! 🤐 ")
             return (
                 "<b>{}:</b>"
                 "\n#MUTE"
@@ -73,7 +73,7 @@ def mute(update, context):
             )
 
         else:
-            message.reply_text("This user is already taped 🤐")
+            message.reply_text("This user is already Muted 🤐")
     else:
         message.reply_text("This user isn't in the chat!")
 
@@ -92,7 +92,7 @@ def unmute(update, context):
     args = context.args
 
     if user_can_ban(chat, user, context.bot.id) == False:
-        message.reply_text("You don't have enough rights to unmute people")
+        message.reply_text("You don't have enough rights to unmute users in this Group")
         return ""
 
     user_id = extract_user(message, args)
@@ -127,7 +127,7 @@ def unmute(update, context):
                     can_add_web_page_previews=True,
                 ),
             )
-            message.reply_text("Yep! this user can start talking again...")
+            message.reply_text("Yep! this user no longer muted now....")
             return (
                 "<b>{}:</b>"
                 "\n#UNMUTE"
@@ -228,7 +228,7 @@ def temp_mute(update, context):
                 until_date=mutetime,
                 permissions=ChatPermissions(can_send_messages=False),
             )
-            message.reply_text("shut up! 🤐 Taped for {}!".format(time_val))
+            message.reply_text("Shut Up! 🙊 Muted for {}!".format(time_val))
             return log
         else:
             message.reply_text("This user is already muted.")
@@ -237,7 +237,7 @@ def temp_mute(update, context):
         if excp.message == "Reply message not found":
             # Do not reply
             message.reply_text(
-                "shut up! 🤐 Taped for {}!".format(time_val),
+                "Shut up! 🙊 Muted for {}!".format(time_val),
                 quote=False)
             return log
         else:
